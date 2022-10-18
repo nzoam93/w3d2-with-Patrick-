@@ -8,6 +8,7 @@ class Board
         @grid = Array.new(n) {Array.new(n)}
         @card_array = make_card_array(n)
         @player = player
+        @hash = {}
         self.populate
     end
 
@@ -64,6 +65,7 @@ class Board
     def reveal(input)
         row, col = input
         @grid[row][col].face_up = true
+        @hash[input] = @grid[row][col].face_value
         return @grid[row][col].face_value
     end
 
