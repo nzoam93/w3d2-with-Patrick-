@@ -3,7 +3,7 @@ require_relative "human_player.rb"
 require_relative "computer_player.rb"
 
 class Board
-    attr_reader :grid, :card_array
+    attr_accessor :grid, :card_array, :hash
     def initialize(n, player)
         @grid = Array.new(n) {Array.new(n)}
         @card_array = make_card_array(n)
